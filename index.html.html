@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .block{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #000000;
+        }
+        .box1{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            position:absolute;
+            left: 150px;
+            top: 400px;
+            background-color: #aff;
+            animation: anil4 0.5s infinite
+        }
+        .box2{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            position:absolute;
+            left: 300px;
+            top: 400px;
+            background-color: #faf;
+            animation: anil3 2s infinite
+        }
+        .box3{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            position:absolute;
+            left: 450px;
+            top: 400px;
+            background-color: #ffa;
+            animation: anil2 2s infinite
+        }
+        .box4{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            position:absolute;
+            left: 600px;
+            top: 400px;
+            background-color: #faa;
+            animation: anil 2s infinite
+        }
+        .box5{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            position:absolute;
+            left: 750px;
+            top: 400px;
+            background-color: #aaf;
+            animation:rot 2s infinite; 
+        }
+        @keyframes rot{
+            0%{
+                transform: rotate(90deg)
+            }
+            10%{
+                transform: rotate(980deg)
+            }
+            100%{
+                transform: rotate(0deg)
+            }
+        }
+        @keyframes anil{
+            0%{
+                transform: translateX(50px)
+            }
+            25%{
+                transform: translatey(50px)
+            }
+            50%{
+                transform: translatex(-50px)
+            }
+            75%{
+                transform: translatey(-50px)
+            }
+            100%{
+                transform: translatex(50px)
+            }
+        }
+        @keyframes anil2{
+            0%{
+                top:400px
+            }
+            25%{
+                top:100px;
+            }
+            100%{
+                top:400px
+            }
+        }
+        @keyframes anil3{
+            0%{
+                top:400px
+            }
+            50%{
+                top:100px;
+                width: 200px;
+                height: 200px;
+            }
+            100%{
+                top:400px
+            }
+        }
+        @keyframes anil4{
+            0%{
+                left:150px;
+            }
+            25%{
+                left:600px;
+            }
+            50%{
+                left: 450px;
+            }
+            75%{
+                left: 850px
+            }
+            100%{
+                left: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+    </div>
+</body>
+</html>
