@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 600px;
+        }
+
+        #boxA,#boxB,#boxC,#boxD{
+            width: 100%;
+        }
+
+        .btnA {
+            width: 100%;
+            display: flex;
+        }
+
+        .btn {
+            width: 25%;  
+        }
+
+        .btn img {
+            width: 100%;
+        }
+        .show{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="boxA" class="show"><img src="https://resource01.ulifestyle.com.hk/res/v3/image/content/2285000/2286805/37V2_600.jpg" alt=""></div>
+        <div id="boxB" class="hidden"><img src="https://fpscdn.yam.com/world/201705/f2/10/592e7fba3f210.jpg" alt=""></div>
+        <div id="boxC" class="hidden"><img src="http://www.iask.ca/uploads/allimg/141018/092335M20-0.jpg" alt=""></div>
+        <div id="boxD" class="hidden"><img src="http://cdn.clm02.com/ezvivi.com/194353/F_m.jpg" alt=""></div>
+    </div>
+    <div class="btnA">
+        <div class="btn" id="box1"><img src="https://resource01.ulifestyle.com.hk/res/v3/image/content/2285000/2286805/37V2_600.jpg" alt=""></div>
+        <div class="btn" id="box2"><img src="https://fpscdn.yam.com/world/201705/f2/10/592e7fba3f210.jpg"></div>
+        <div class="btn" id="box3"><img src="http://www.iask.ca/uploads/allimg/141018/092335M20-0.jpg" alt=""></div>
+        <div class="btn" id="box4"><img src="http://cdn.clm02.com/ezvivi.com/194353/F_m.jpg" alt=""></div>
+    </div>
+    </div>
+    <script>
+            var box1 = document.querySelector("#box1");
+            var box2 = document.querySelector("#box2");
+            var box3 = document.querySelector("#box3");
+            var box4 = document.querySelector("#box4");
+            
+            var boxA = document.querySelector("#boxA");
+            var boxB = document.querySelector("#boxB");
+            var boxC = document.querySelector("#boxC");
+            var boxD = document.querySelector("#boxD");
+
+            function hidden_all(){
+                boxA.classList.add("hidden")
+                boxB.classList.add("hidden")
+                boxC.classList.add("hidden")
+                boxD.classList.add("hidden")
+
+                boxA.classList.remove("show")
+                boxB.classList.remove("show")
+                boxC.classList.remove("show")
+                boxD.classList.remove("show")
+            }
+    
+            box1.onclick = function(){
+                hidden_all();
+                boxA.classList.add("show");
+                boxA.classList.remove("hidden");
+
+            }
+            box2.onclick = function(){ 
+                hidden_all();
+                boxB.classList.add("show");
+                boxB.classList.remove("hidden") ;
+            }
+            box3.onclick = function(){
+                hidden_all();
+                boxC.classList.add("show");
+                boxC.classList.remove("hidden");
+            }
+            box4.onclick = function(){
+                hidden_all();
+                boxD.classList.add("show");
+                boxD.classList.remove("hidden");
+            }
+    
+    
+        </script>
+
+</body>
+
+</html>

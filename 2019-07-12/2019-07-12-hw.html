@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0;
+        }
+        body{
+            width: 500px;
+        }
+        ul {
+            height: 40px;
+            border: 1Px solid #000000;
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            width: 33.33%;
+            height: 100%;
+            border: 1Px solid #000000;
+        }
+
+        #tab_content1,#tab_content2,#tab_content3{
+            width: 100%;
+            border: 1px solid #000000;
+        }
+        .show{
+            display: block;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li id="tabl1">1</li>
+        <li id="tabl2">2</li>
+        <li id="tabl3">3</li>
+    </ul>
+    <div>
+        <div id="tab_content1" class="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem, quibusdam eveniet consequatur adipisci possimus earum hic optio pariatur iste.</div>
+        <div id="tab_content2" class="hidden">t consectetur adipisicing elit. Tenetur rem, quibusdam eveniet consequatur adipisci possimus earum hic optio pariatur iste.</div>
+        <div id="tab_content3" class="hidden">s earum hic optio pariatur iste.</div>
+    </div>
+
+    <script>
+        var tabl1 = document.querySelector("#tabl1");
+        var tabl2 = document.querySelector("#tabl2");
+        var tabl3 = document.querySelector("#tabl3");
+
+        var tab_content1 = document.querySelector("#tab_content1");
+        var tab_content2 = document.querySelector("#tab_content2");
+        var tab_content3 = document.querySelector("#tab_content3");
+
+        function hidden_all() {
+            tab_content1.classList.remove("show");
+            tab_content2.classList.remove("show");
+            tab_content3.classList.remove("show");
+
+            tab_content1.classList.add("hidden");
+            tab_content2.classList.add("hidden");
+            tab_content3.classList.add("hidden");
+        }
+
+        tabl1.onclick = function() {
+            hidden_all();
+            tab_content1.classList.add("show");
+            tab_content1.classList.remove("hidden");
+        }
+        tabl2.onclick = function() {
+            hidden_all();
+            tab_content2.classList.add("show");
+            tab_content2.classList.remove("hidden");
+        }
+        tabl3.onclick = function() {
+            hidden_all();
+            tab_content3.classList.add("show");
+            tab_content3.classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>

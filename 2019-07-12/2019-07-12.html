@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 600px;
+        }
+
+        #boxa {
+            width: 100%;
+            float: left;
+        }
+        .btnA{
+            width: 100%;
+            float: left;
+            display: flex;
+        }
+        
+        .btn{
+            width: 25%;
+            padding: 5px;
+        }
+
+        .btn img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="boxa"><img id="boxb" src="https://resource01.ulifestyle.com.hk/res/v3/image/content/2285000/2286805/37V2_600.jpg"alt="" >
+    </div>
+        <div class="btnA">
+            <div class="btn" id="box1"><img src="https://resource01.ulifestyle.com.hk/res/v3/image/content/2285000/2286805/37V2_600.jpg" alt="">
+            </div>
+            <div class="btn" id="box2"><img src="https://fpscdn.yam.com/world/201705/f2/10/592e7fba3f210.jpg"></div>
+            <div class="btn" id="box3"><img src="http://www.iask.ca/uploads/allimg/141018/092335M20-0.jpg" alt=""></div>
+            <div class="btn" id="box4"><img src="http://cdn.clm02.com/ezvivi.com/194353/F_m.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+        var box1 = document.querySelector("#box1");
+        var box2 = document.querySelector("#box2");
+        var box3 = document.querySelector("#box3");
+        var box4 = document.querySelector("#box4");
+        var boxb = document.querySelector("#boxb");
+
+        box1.onclick = function(){
+            boxb.src="https://resource01.ulifestyle.com.hk/res/v3/image/content/2285000/2286805/37V2_600.jpg";
+        }
+        box2.onclick = function(){
+            boxb.src="https://fpscdn.yam.com/world/201705/f2/10/592e7fba3f210.jpg";
+        }
+        box3.onclick = function(){
+            boxb.src="http://www.iask.ca/uploads/allimg/141018/092335M20-0.jpg";
+        }
+        box4.onclick = function(){
+            boxb.src="http://cdn.clm02.com/ezvivi.com/194353/F_m.jpg";
+        }
+
+
+    </script>
+</body>
+
+</html>

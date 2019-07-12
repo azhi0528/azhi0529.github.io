@@ -11,24 +11,32 @@
             color: blueviolet;
             font-size: 30px;
         }
-        button{
+
+        button {
             width: 60px;
             height: 30px;
             border-radius: 30%;
-            box-shadow: 2px 2px 5px;   
+            box-shadow: 2px 2px 5px;
         }
     </style>
 </head>
+
 <body>
     <p class="v1">HI</p>
     <button onclick="btn_click()">chang</button>
-    
+
     <script>
-        function btn_click(){
-        var fp = document.querySelector(".v1");
-        fp.textContent = "u cant see me!";
+        function btn_click() {
+            var fp = document.querySelector(".v1");
+            // fp.textContent = "u cant see me!";
+            var now_fp = fp.textContent;
+            if (now_fp == "HI") {
+                fp.textContent = "u cant see me!"
+            } else {
+                fp.textContent = "HI"
+            }
         }
-        // console.log(fp);
+
     </script>
 </body>
 
