@@ -7,50 +7,122 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             margin: 0 auto;
             padding: 0;
             text-align: center
         }
-        body{
+
+        body {
             max-width: 1200px;
+            height: 50vh;
         }
+
         ul {
-            height: 30px;
-            padding-top: 10px;
+            height: 50px;
         }
 
         li {
             list-style: none;
-            width: 25%;
+            width: 33.33%;
             height: 100%;
-            border: 1Px solid #000000;
-            float:left
+            float: left;
+            line-height: 40px;
+            border-left: 1px dotted #000000;
+            border-right: 1px dotted #000000;
+            border-top: 1px dotted #000000;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
         }
 
-        #tab_content1,#tab_content2,#tab_content3{
-            border: 1px solid #000000;
-            height: 50vh;
+        li:hover {
+            background-color: #aff;
         }
-        .show{
+
+        #tab_content1,
+        #tab_content2,
+        #tab_content3 {
+            border-left: 1px dotted #000000;
+            border-right: 1px dotted #000000;
+            border-bottom: 1px dotted #000000;
+            height: calc(50vh - 50px);
+        }
+
+        .show {
             display: block;
         }
-        .hidden{
+
+        .bgc_show {
+            background-color: #afa;
+            /* border-bottom: 6px solid #faa */
+        }
+
+        .hidden {
             display: none;
+        }
+
+        .bgc_hidden {
+            background-color: none;
+            border-bottom: 1px dotted #000000;
+        }
+
+        @media screen and (max-width:1199px) {
+            body {
+                min-width: 800px;
+            }
+
+            #tab {
+                width: 5%;
+                height: 60vh;
+                float: left;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+
+            li {
+                list-style: none;
+                width: 100%;
+                height: 33.33%;
+                line-height: 20vh;
+                border-left: 1px dotted #000000;
+                border-top: 1px dotted #000000;
+                border-top: 1px dotted #000000;
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-top-right-radius: 0%;
+            }
+
+            #tab_c {
+                width: 90%;
+                float: left;
+            }
+
+            #tab_content1,
+            #tab_content2,
+            #tab_content3 {
+                border-top: 1px dotted #000000;
+                border-right: 1px dotted #000000;
+                border-bottom: 1px dotted #000000;
+                width: 100%;
+                height: 60vh;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    <ul>
-        <li id="tabl1">1</li>
-        <li id="tabl2">2</li>
-        <li id="tabl3">3</li>
+    <ul id="tab">
+        <li id="tabl1" class="bgc_show">1</li>
+        <li id="tabl3" class="bgc_hidden">2</li>
+        <li id="tabl2" class="bgc_hidden">3</li>
     </ul>
-    <div>
-        <div id="tab_content1" class="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem, quibusdam eveniet consequatur adipisci possimus earum hic optio pariatur iste.</div>
-        <div id="tab_content2" class="hidden">t consectetur adipisicing elit. Tenetur rem, quibusdam eveniet consequatur adipisci possimus earum hic optio pariatur iste.</div>
+    <div id="tab_c">
+        <div id="tab_content1" class="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem,
+            quibusdam eveniet consequatur adipisci possimus earum hic optio pariatur iste.</div>
+        <div id="tab_content2" class="hidden">t consectetur adipisicing elit. Tenetur rem, quibusdam eveniet consequatur
+            adipisci possimus earum hic optio pariatur iste.</div>
         <div id="tab_content3" class="hidden">s earum hic optio pariatur iste.</div>
     </div>
 
@@ -63,6 +135,10 @@
         var tab_content2 = document.querySelector("#tab_content2");
         var tab_content3 = document.querySelector("#tab_content3");
 
+        var li_bgc1 = document.querySelector("#tabl1");
+        var li_bgc2 = document.querySelector("#tabl2");
+        var li_bgc3 = document.querySelector("#tabl3");
+
         function hidden_all() {
             tab_content1.classList.remove("show");
             tab_content2.classList.remove("show");
@@ -73,20 +149,39 @@
             tab_content3.classList.add("hidden");
         }
 
-        tabl1.onclick = function() {
+        function bgc_hidden_all() {
+            li_bgc1.classList.remove("bgc_show");
+            li_bgc2.classList.remove("bgc_show");
+            li_bgc3.classList.remove("bgc_show");
+
+            li_bgc1.classList.add("bgc_hidden");
+            li_bgc2.classList.add("bgc_hidden");
+            li_bgc3.classList.add("bgc_hidden");
+        }
+
+        tabl1.onclick = function () {
             hidden_all();
             tab_content1.classList.add("show");
             tab_content1.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc1.classList.add("bgc_show");
+            li_bgc1.classList.remove("bgc_hidden");
         }
-        tabl2.onclick = function() {
+        tabl2.onclick = function () {
             hidden_all();
             tab_content2.classList.add("show");
             tab_content2.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc2.classList.add("bgc_show");
+            li_bgc2.classList.remove("bgc_hidden");
         }
-        tabl3.onclick = function() {
+        tabl3.onclick = function () {
             hidden_all();
             tab_content3.classList.add("show");
             tab_content3.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc3.classList.add("bgc_show");
+            li_bgc3.classList.remove("bgc_hidden");
         }
     </script>
 </body>
