@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div id="card">
+
+    </div>
+
+    <!-- <div class="top_section">
+        <div id="top_image">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="bottom_section">
+        <h1 id="title"></h1>
+        <p id="content"></p>
+    </div> -->
+
+    <script>
+
+        var milkTea = {
+            name: "奶茶",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Classic_bubble_tea.jpg/220px-Classic_bubble_tea.jpg",
+            suger: "微糖",
+            milk: "少奶",
+            ice: "微冰",
+            caluli: 304,
+            price: 40
+        };
+
+        // var top_image =document.querySelector("#top_image img");
+        // var title =document.querySelector("#title");
+        // var content =document.querySelector("#content");
+
+        // top_image.src = milkTea.img;
+        // title.innerHTML = '<div style="color:red">'+milkTea.name+'</div>';
+        // content.innerHTML = '<b>糖冰:</b>'+milkTea.ice;
+
+        card.innerHTML = `
+        <div class="top_section">
+        <div id="top_image">
+            <img src="${milkTea.img}" alt="">
+        </div>
+        </div>
+        <div class="bottom_section">
+        <h1 id="title">${milkTea.name}</h1>
+        <p id="content">冰塊:${milkTea.ice} , 糖度:${milkTea.suger}</p>
+        </div>
+        `
+    </script>
+</body>
+
+</html>
