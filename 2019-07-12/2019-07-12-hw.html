@@ -5,53 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>tab</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             margin: 0 auto;
             padding: 0;
+            text-align: center
         }
+<<<<<<< HEAD
         body{
             max-width: 1200px;
+=======
+
+        body {
+            max-width: 1200px;
+            height: 50vh;
+>>>>>>> b6866258188ca13112bf431eeb617471cb34461d
         }
+
         ul {
-            height: 40px;
-            border: 1Px solid #000000;
-            display: flex;
+            height: 10%;
         }
 
         li {
             list-style: none;
-            width: 33.33%;
+            width: 25%;
             height: 100%;
-            border: 1Px solid #000000;
+            float: left;
+            line-height: 50px;
         }
 
+        li:hover {
+            background-color: #afa;
+        }
+
+<<<<<<< HEAD
         #tab_content1,#tab_content2,#tab_content3{
             width: 100%;
             border: 1px solid #000000;
             height: 500px;
+=======
+        #tab_content1,
+        #tab_content2,
+        #tab_content3 {
+            height: calc(50vh - 50px);
+            background-color: #e5e7e5;
+            font-size: 72px;
+            font-family: "微軟正黑體";
+            line-height: 400px
+>>>>>>> b6866258188ca13112bf431eeb617471cb34461d
         }
-        .show{
+
+        .show {
             display: block;
         }
-        .hidden{
+
+        .bgc_show {
+            background-color: rgb(255, 255, 255);
+            border-bottom: 10px solid #afa;
+        }
+
+        .hidden {
             display: none;
+        }
+
+        .bgc_hidden {
+            background-color: #f6faf6;
+        }
+
+        @media screen and (max-width:1199px) {
+            body {
+                min-width: 800px;
+            }
+
+            #tab {
+                width: 5%;
+                height: 60vh;
+                float: left;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+
+            li {
+                list-style: none;
+                width: 100%;
+                height: 33.33%;
+                line-height: 20vh;
+            }
+
+            #tab_c {
+                width: 90%;
+                float: left;
+            }
+
+            #tab_content1,
+            #tab_content2,
+            #tab_content3 {
+                width: 100%;
+                height: 60vh;
+                text-align: center;
+                line-height: 550px
+            }
+
+            .bgc_show {
+                background-color: rgb(255, 255, 255);
+                border-right: 8px solid #afa;
+                border-bottom: none;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    <ul>
-        <li id="tabl1">1</li>
-        <li id="tabl2">2</li>
-        <li id="tabl3">3</li>
+    <ul id="tab">
+        <li id="tabl1" class="bgc_show">lorem</li>
+        <li id="tabl2" class="bgc_hidden">lorem</li>
+        <li id="tabl3" class="bgc_hidden">lorem</li>
     </ul>
+<<<<<<< HEAD
     <div>
         <div id="tab_content1" class="show">123</div>
         <div id="tab_content2" class="hidden">456</div>
         <div id="tab_content3" class="hidden">789</div>
+=======
+    <div id="tab_c">
+        <div id="tab_content1" class="show">1</div>
+        <div id="tab_content2" class="hidden">2</div>
+        <div id="tab_content3" class="hidden">3</div>
+>>>>>>> b6866258188ca13112bf431eeb617471cb34461d
     </div>
 
     <script>
@@ -63,6 +146,10 @@
         var tab_content2 = document.querySelector("#tab_content2");
         var tab_content3 = document.querySelector("#tab_content3");
 
+        var li_bgc1 = document.querySelector("#tabl1");
+        var li_bgc2 = document.querySelector("#tabl2");
+        var li_bgc3 = document.querySelector("#tabl3");
+
         function hidden_all() {
             tab_content1.classList.remove("show");
             tab_content2.classList.remove("show");
@@ -73,20 +160,39 @@
             tab_content3.classList.add("hidden");
         }
 
-        tabl1.onclick = function() {
+        function bgc_hidden_all() {
+            li_bgc1.classList.remove("bgc_show");
+            li_bgc2.classList.remove("bgc_show");
+            li_bgc3.classList.remove("bgc_show");
+
+            li_bgc1.classList.add("bgc_hidden");
+            li_bgc2.classList.add("bgc_hidden");
+            li_bgc3.classList.add("bgc_hidden");
+        }
+
+        tabl1.onclick = function () {
             hidden_all();
             tab_content1.classList.add("show");
             tab_content1.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc1.classList.add("bgc_show");
+            li_bgc1.classList.remove("bgc_hidden");
         }
-        tabl2.onclick = function() {
+        tabl2.onclick = function () {
             hidden_all();
             tab_content2.classList.add("show");
             tab_content2.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc2.classList.add("bgc_show");
+            li_bgc2.classList.remove("bgc_hidden");
         }
-        tabl3.onclick = function() {
+        tabl3.onclick = function () {
             hidden_all();
             tab_content3.classList.add("show");
             tab_content3.classList.remove("hidden");
+            bgc_hidden_all();
+            li_bgc3.classList.add("bgc_show");
+            li_bgc3.classList.remove("bgc_hidden");
         }
     </script>
 </body>
