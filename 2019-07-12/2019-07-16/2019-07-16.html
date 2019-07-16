@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0 auto;
+            font-family: "微軟正黑體";
+        }
+        #card{
+            width: 300px;
+            height: 45vh;
+            border: 5px dotted #f0e008;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:5px 5px 5px rgb(131, 126, 126);
+        }
+        .top{
+            height:30vh;
+            background-image: url(img/sun.jpg);
+            background-size: cover;
+        }
+        .bottom{
+            padding-top: 10px;
+            height: 15vh;
+        }
+
+        h1{
+            text-align: left;
+            font-size: 20px;
+            float: left;
+            clear: both;
+            margin-left: 20px;
+        }
+        
+        span{
+            text-align: center;
+            font-size: 20px;
+            float: right;
+            margin-right: 20px;
+            }
+
+        .te,.wd,.uvi{
+            color: rgb(107, 109, 110)
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <select id="location_select" name="" id="">
+        
+    </select>
+
+    <div id="card">
+        
+    </div>
+
+    <script>
+        var locations = [];
+        var card = document.querySelector("#card");
+        var location_select = document.querySelector("#location_select");
+        
+            
+        fetch('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-D0047-091?Authorization=CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D&format=JSON')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+
+                locations = myJson.cwbopendata.dataset.locations.location;
+                console.log(locations);
+                
+                var loca = locations[5].locationName;
+                var te = locations[5].weatherElement[0].time[0].elementValue.value;
+                var wd = locations[5].weatherElement[11].time[1].elementValue[0].value;
+                var uvi = locations[5].weatherElement[13].time[0].elementValue[1].value;
+                // var location = locations[0].locationName;
+                // console.log(location);
+                
+                // for (let index = 0; index < array.length; index++) {
+                //     const element = array[index];
+                    
+                // }
+
+                card.innerHTML = `
+                <div class="top"></div>
+                <div class="bottom">
+                    <h1 class="title">${loca}</h1>
+                    <h1 class="te">溫度</h1><span class="te">${te}°</span>
+                    <h1 class="wd">風速</h1><span class="wd">${wd}V</span>
+                    <h1 class="uvi">紫外線</h1><span class="uvi">${uvi}</span>
+                </div>
+                `
+
+                // location_select.innerHTML = 
+            });
+
+    </script>
+
+</body>
+
+</html>
