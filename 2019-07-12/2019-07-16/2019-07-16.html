@@ -56,7 +56,7 @@
 <body>
 
     <select id="location_select" name="" id="">
-        
+       
     </select>
 
     <div id="card">
@@ -76,20 +76,14 @@
             .then(function (myJson) {
 
                 locations = myJson.cwbopendata.dataset.locations.location;
-                console.log(locations);
+                // console.log(locations);
                 
                 var loca = locations[5].locationName;
                 var te = locations[5].weatherElement[0].time[0].elementValue.value;
                 var wd = locations[5].weatherElement[11].time[1].elementValue[0].value;
                 var uvi = locations[5].weatherElement[13].time[0].elementValue[1].value;
-                // var location = locations[0].locationName;
                 // console.log(location);
-                
-                // for (let index = 0; index < array.length; index++) {
-                //     const element = array[index];
-                    
-                // }
-
+               
                 card.innerHTML = `
                 <div class="top"></div>
                 <div class="bottom">
@@ -99,8 +93,22 @@
                     <h1 class="uvi">紫外線</h1><span class="uvi">${uvi}</span>
                 </div>
                 `
+ 
+                for (let index = 0; index < locations.length; index++) {
+                    const location = locations[index];
+                    // console.log(location);
+                    location_select.innerHTML += `
+                     <option value="${location.locationName}">${location.locationName}</option>
+                    `
+                    
+                    
+                }
 
-                // location_select.innerHTML = 
+                location_select.onchange = function() {
+                    console.log(location_select.value);
+                    
+                }
+
             });
 
     </script>
