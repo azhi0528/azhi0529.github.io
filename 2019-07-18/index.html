@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微軟正黑體";
+            scroll-behavior:smooth;
+        }
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 1920px;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        #banner {
+            width: 100%;
+            height: 50vh;
+            background-image: url(img/banner.jpg);
+            background-size: cover;
+            background-position: center
+        }
+
+        #main {
+            width: 1200px;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .btn1,
+        .btn2,
+        .btn3 {
+            width: 20%;
+            height: 60px;
+            float: left;
+            margin-right: 80px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 2px 3px #000000;
+            background-color: #FEEDD1;
+            transition: 0.5s;
+        }
+
+        .btn4 {
+            width: 20%;
+            height: 60px;
+            float: left;
+            margin-top: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 2px 3px #000000;
+            background-color: #FEEDD1;
+            transition: 0.5s;
+        }
+
+        .nav_btn.btn4:nth-child(4) {
+            margin-right: 0;
+        }
+
+        .nav_btn:hover {
+            background-color: #FEE074;
+            border-radius: 90%;
+        }
+
+        .intro,
+        .story,
+        .history,
+        .producer {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .intro,
+        .history {
+            background-color: #FBBF1F;
+        }
+
+        .story,
+        .producer {
+            background-color: #D6D8D7;
+        }
+
+        .title {
+            width: 100%;
+            height: 20%;
+            float: left;
+            margin: 10px 0 10px 0;
+            line-height: 20%;
+        }
+
+        .title h1 {
+            font-size: 50px;
+            font-family: "微軟正黑體";
+            text-align: center;
+            margin-top: 41px
+        }
+
+        h2 {
+            text-align: center;
+            margin: 45px
+        }
+
+        hr {
+            border: 1px solid #6C3315;
+            width: 50%;
+        }
+
+        .content_1,
+        .content_2 {
+            width: 50%;
+            height: 70%;
+            float: left;
+            font-family: "微軟正黑體";
+            position: relative;
+            text-align: justify;
+        }
+
+        .image_1,
+        .image_2 {
+            width: 50%;
+            height: 100%;
+            transition: 1S;
+        }
+
+        .image_1 {
+            background-image: url(img/img5.jpg);
+            background-size: cover;
+            float: left;
+        }
+
+        /* .image_1:hover {
+            background-image: url(img/img2.jpg);
+            transform: rotate(720deg);
+        } */
+
+        .image_2 {
+            background-image: url(img/img3.jpg);
+            background-position: center;
+            background-size: cover;
+            float: right;
+        }
+
+        .image_2:hover {
+            background-image: url(img/img4.jpg);
+            animation: v1 1s 1;
+            transition-timing-function: ease-in-out;
+        }
+
+        .content_3,
+        .producer .content_5 {
+            width: 50%;
+            height: 100%;
+            text-align: justify;
+            float: left;
+            position: relative;
+        }
+
+        .content_4 {
+            width: 100%;
+            height: 70%;
+            text-align: justify;
+            float: left;
+            position: relative;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+        }
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .p3 {
+            margin-top: 50px
+        }
+
+        .p5 {
+            margin-top: 45px
+        }
+
+        #footer {
+            background-color: #569A35;
+        }
+        
+        .image_cover{
+            background-color: #aff;
+            opacity: 0.5;
+            width: 15%;
+            height: 20%;
+            transition: 0.6s;
+            transition-timing-function: ease-in;
+            float: left;
+        }
+        
+        .image_cover:hover{
+            background-image: url(img/img2.jpg);
+            background-position: center;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .back_to_top{
+            width: 100px;
+            height: 50px;
+            background-color: cornflowerblue;
+            position: fixed;
+            bottom: 20px;
+            right: 320px;
+            display: none;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50px
+        }
+        .back_to_top.show{
+            display: block;
+        }
+
+        @keyframes v1 {
+            0% {
+                transform: translatey(0px);
+            }
+
+            50% {
+                transform: translate(-600px);
+
+            }
+
+            100% {
+                transform: translatey(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/banner2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/banner4.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/banner1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+                <!-- <div class="swiper-slide"><img src="img/banner1.jpeg" alt=""></div> -->
+                <!-- <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="navbar">
+            <ul>
+                <a href="#intro">
+                    <li class="nav_btn btn1">介紹</li>
+                </a>
+                <a href="#story">
+                    <li class="nav_btn btn2">故事</li>
+                </a>
+                <a href="#history">
+                    <li class="nav_btn btn3">種類</li>
+                </a>
+                <a href="#producer">
+                    <li class="nav_btn btn4">名稱爭議</li>
+                </a>
+            </ul>
+        </div>
+        <section class="intro" id="intro">
+            <div class="title">
+                <h1>滷肉飯</h1>
+            </div>
+            <hr>
+            <div class="content_1">
+                <p class="p1">
+                    滷肉飯是臺灣流行的一道豬肉丁飯菜餚，類似港式燒味。近年臺灣官方將滷肉飯英譯，改為臺灣話發音的直譯，如日本壽司、韓國泡菜英譯，以當地語言直譯，突顯專有特色）滷肉飯的特色和製作的關鍵部分在於肉醬和肉汁，在台南、台中、台北的製作方法和特點均有差異
+                </p>
+            </div>
+            <div class="content_2">
+                <p class="p2">「滷肉飯」「肉燥飯」「爌肉飯」這三款都是豬豬出身，也是台灣人的最愛美食小吃之一，但名稱南北說法就差很多喔！！～像北部是說「爌肉飯」但南部卻是「滷肉飯」，但其實都是一樣的東西喔！！
+                </p>
+            </div>
+        </section>
+        <section class="story" id="story">
+            <div class="image_1">
+                <div class="image_cover"></div>
+            </div>
+            <div class="content_3">
+                <div class="title">
+                    <h2>故事</h2>
+                </div>
+                <hr>
+                <p class="p3">
+                    還記得哥哥國中時的作文曾寫過「一種味道」，他寫道：「有一種味道是我最難以忘懷的，那是阿嬤做的肉燥，簡單的五花肉末、油蔥、醬油，搭配出鹹鹹甜甜的好滋味，即使媽媽滷的也很好吃，就是少了一種味道，我想那是對過世阿嬤的思念。」
+                    這些堆堆疊疊的味道，這些忘不掉、捨不得，都是幸福的根源，為孩子們料理的初衷，不知道自己可以陪伴孩子多久，但終會在記憶中留下專屬媽媽幸福的味道。
+                </p>
+            </div>
+        </section>
+        <section class="history" id="history">
+            <div class="title">
+                <h2>種類</h2>
+            </div>
+            <div class="content_4">
+                <hr>
+                <p class="p4">
+                    滷肉飯在臺灣被視為極具台灣特色的民眾小吃，在全臺各地都有店家販售，南北有不同的意義。在北臺灣，滷肉飯為一種淋上含有煮熟碎豬肉或炒香肉燥（豬絞肉）及醬油滷汁的白飯菜餚，有時醬汁裡亦會有香菇丁等的成份在內，與炕肉飯不同，看起來像南臺灣肉燥飯；「滷肉飯」在臺灣南部是指有著滷汁塊狀肉的切丁滷肉飯，有些店家搭配筍乾醃蘿蔔乾，與彰化的大塊炕肉飯亦不盡相同。南台灣的肉燥飯通常是以肥瘦一定比例的豬絞肉滷製，但北台灣的滷肉飯通常用含有豬皮的肥肉切丁滷製，兩者的口感和口味略有不同。在香港的臺式餐館，「滷肉飯」大多是使用滷五花肉塊，而「魯肉飯」或「肉燥飯」才大多是使用滷肉碎。中國大陸的「台灣滷肉飯」則不作區分，使用小塊滷肉或者肉燥的都可以稱為「滷肉飯」。
+                </p>
+            </div>
+        </section>
+        <section class="producer" id="producer">
+            <div class="image_2"></div>
+            <div class="content_5">
+                <h2>名稱爭議</h2>
+                <hr>
+                <p class="p5">
+                    「滷」者，用濃汁烹調食物也。臺灣常見「魯」肉飯，「魯」字原意為魯國。臺灣美食作家朱振藩說，根據最早的字典書漢朝《說文解字》判斷，「鹵」字是正寫，後來出現「滷」字。至於「魯」則是因滷字不常用取其音相近者，數十年前在臺灣出現，久用成為慣用用法；按字意正確用字為「滷」。
+                </p>
+            </div>
+        </section>
+    </div>
+    <div id="footer">
+        <div class="back_to_top">回到首頁</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'progressbar',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 200){
+                $(".back_to_top").addClass("show");
+            }else{
+                $(".back_to_top").removeClass("show");
+            }    
+        })
+
+        $(".back_to_top").click(function () {
+            $(window).scrollTop(0);
+        })
+        
+    </script>
+</body>
+
+</html>

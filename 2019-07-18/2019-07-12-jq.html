@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center
+        }
+
+        body {
+            max-width: 1200px;
+        }
+
+        body {
+            max-width: 1200px;
+            height: 50vh;
+        }
+
+        ul {
+            height: 10%;
+        }
+
+        li {
+            list-style: none;
+            width: 25%;
+            height: 100%;
+            float: left;
+            line-height: 60px;
+        }
+
+        li:hover {
+            background-color: #afa;
+        }
+
+        #tab_content1,
+        #tab_content2,
+        #tab_content3,
+        #tab_content4 {
+            height: calc(50vh - 50px);
+            background-color: #e5e7e5;
+            font-size: 72px;
+            font-family: "微軟正黑體";
+            line-height: 600px
+        }
+
+
+
+        .tab_c_ary {
+            display: none;
+            background-color: #f6faf6;
+        }
+
+        .tab_c_ary.show {
+            display: block;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /* @media screen and (max-width:1199px) {
+            body {
+                min-width: 800px;
+            }
+
+            #tab {
+                width: 5%;
+                height: 60vh;
+                float: left;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+
+            li {
+                list-style: none;
+                width: 100%;
+                height: 25%;
+                line-height: 15vh;
+            }
+
+            #tab_c {
+                width: 90%;
+                float: left;
+            }
+
+            #tab_content1,
+            #tab_content2,
+            #tab_content3,
+            #tab_content4 {
+                width: 100%;
+                height: 60vh;
+                text-align: center;
+                line-height: 800px;
+            }
+
+            .bgc_show {
+                background-color: rgb(255, 255, 255);
+                border-right: 8px solid #afa;
+                border-bottom: none;
+            } */
+
+        /* } */
+    </style>
+</head>
+
+<body>
+    <ul id="tab">
+        <li id="tabl1" class="tab_ary" data-tabid="1">lorem</li>
+        <li id="tabl2" class="tab_ary" data-tabid="2">lorem</li>
+        <li id="tabl3" class="tab_ary" data-tabid="3">lorem</li>
+        <li id="tabl4" class="tab_ary" data-tabid="4">lorem</li>
+    </ul>
+
+    <div id="tab_c">
+        <div id="tab_content1" class="tab_c_ary show" data-tabid="1">1</div>
+        <div id="tab_content2" class="tab_c_ary" data-tabid="2">2</div>
+        <div id="tab_content3" class="tab_c_ary" data-tabid="3">3</div>
+        <div id="tab_content4" class="tab_c_ary" data-tabid="4">4</div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(".tab_ary").click(function () {
+            var tabid = this.dataset.tabid;
+            $(".tab_c_ary").removeClass("show");
+            // $(".tab_c_ary[data-tabid=" + tabid + "]").addClass("show");
+            $(`.tab_c_ary[data-tabid=${tabid}]`).addClass("show");
+        });
+
+    </script>
+
+</body>
+
+</html>
