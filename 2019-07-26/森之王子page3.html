@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+    <style>
+        .banner {
+            width: 100vw;
+            height: calc(100vh - 56px);
+            background-color: bisque;
+        }
+
+        .main {
+            padding: 30px;
+        }
+
+        .intro {
+            height: 50vh;
+        }
+
+        .bg_img {
+            background-image: url("https://picsum.photos/800/1000");
+        }
+
+        .footer {
+            background-color: lightgreen;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="row collapse navbar-collapse " id="navbarNav">
+                <div class="col-3 navbar-nav justify-content-center">
+                    <a class="nav-item nav-link active" href="#">關於我們</a>
+                </div>
+                <div class="col-3 navbar-nav justify-content-center">
+                    <a class="nav-item nav-link" href="#">客房介紹</a>
+                </div>
+                <div class="col-3 navbar-nav justify-content-center">
+                    <a class="nav-item nav-link" href="#">場地介紹</a>
+                </div>
+                <div class="col-3 navbar-nav justify-content-center">
+                    <a class="nav-item nav-link" href="#">景點與交通</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="banner"></section>
+
+    <section class="main">
+        <div class="container show">
+            <div class="row pb-3 intro wedding">
+                <div class="col-xl-6 bg_img"></div>
+                <div class="col-xl-6 blockquote text-center align-self-center">Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Reprehenderit soluta vel consectetur deleniti officiis culpa recusandae incidunt
+                    dicta voluptatum. Esse!</div>
+            </div>
+        </div>
+        <div class="row Swiper hidden">
+            <div class="col-xl-12">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="img" src="https://picsum.photos/600/600" alt=""></div>
+                        <div class="swiper-slide"><img src="https://picsum.photos/600/600" alt=""></div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                        <div class="swiper-slide">Slide 8</div>
+                        <div class="swiper-slide">Slide 9</div>
+                        <div class="swiper-slide">Slide 10</div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pb-3 intro">
+                <div class="col-xl-6 blockquote text-center align-self-center">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Eum qui amet officia tempore consectetur alias nam, similique, repudiandae ipsa
+                    illum pariatur quia dolorum. Harum quod deleniti commodi quasi, asperiores ea!</div>
+                <div class="col-xl-6 bg_img"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pb-3 intro">
+                <div class="col-xl-6 bg_img"></div>
+                <div class="col-xl-6 blockquote text-center align-self-center">Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Obcaecati facere ratione quae, vel aliquid qui nesciunt quas libero quod
+                    asperiores!</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class=" footer">
+        <div class="container ">
+            <div class="row">
+                <div class="col-6 ">
+                    <p>專線 | Tel 0987-816726<br>
+                        信箱 | Mail morilife520@gmail.com<br>
+                        地址 | Add 台中市新社區永源里井南街28號</p>
+                </div>
+                <div class="col-6 text-right">
+                    <p>寵物友善<br>
+                        親子友善<br>
+                        check in: 4:00<br>
+                        check out: 11:00 </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            keyboard: {
+                enabled: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+        });
+    </script>
+    <script>
+        $(".intro").click(function () {
+            $(this).toggle("show hidden");
+            $(".Swiper").toggle("show hidden");
+        });
+        // $(".Swiper").click(function () {
+        //     $(this).toggle("show hidden");
+        //     $(".intro.wedding").toggle("show hidden");
+        // });
+
+    </script>
+</body>
+
+</html>
