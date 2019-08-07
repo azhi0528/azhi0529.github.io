@@ -1,24 +1,28 @@
 * {
-    margin: 0 auto;
     font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "微軟正黑體";
     color: black;
     box-sizing: border-box;
 }
 
-body {
-    max-width: 1920px;
+h1{
+    font-size: 36px;
+    text-align: center;
 }
 
 .navbar {
     width: calc(100vw - 200px);
     height: 10vh;
+    background-color: rgb(221, 157, 221)
 }
 
 .logo {
-    width: 100px;
+    width: 400px;
     height: 10vh;
     float: left;
+    background-image: url("img/logo.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 button {
@@ -60,7 +64,6 @@ hr {
 .banner {
     width: 80vw;
     height: 90vh;
-    background-color: aquamarine;
 }
 
 .banner_contant {
@@ -69,19 +72,36 @@ hr {
     position: absolute;
     top: 30vh;
     left: 10vw;
-    background: #fff;
-    opacity: 0.5;
+}
+
+.contant_text{
+    position: relative;
+    z-index: 500;
+    background: rgb(168, 223, 146);
+    padding: 132px 50px;
+    opacity: 0.9;
+}
+.banner_contant::before{
+    content: "";
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    left: 10vw;
+    bottom: 5vh;
+    background-color: rgb(233, 187, 126);
+    z-index: 200;
 }
 
 .banner_contant::after{
-    content: "216545";
+    content: "";
     width: 20vw;
-    /* height: 60vh; */
-    background-color: #ffa;
+    height: 600px;
+    background-color:rgb(168, 223, 146);
     position: absolute;
     right: 0;
     bottom: 0;
     transform: translateX(100%);
+    z-index: 200;
 }
 
 .banner_img {
